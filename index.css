@@ -48,11 +48,20 @@ svg {
   display: none;
 }
 
+.desktop-title-tail {
+  display: none;
+}
+
+.mobile-only,
+.mobile-title-tail {
+  display: block;
+}
+
 .hero {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  min-height: auto;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -65,7 +74,7 @@ svg {
 }
 
 .hero-bg-mobile {
-  background: url("https://www.fechamentobrutal.com.br/wp-content/uploads/2026/02/Hero-BG-.webp") center top / cover no-repeat;
+  background: url("https://www.fechamentobrutal.com.br/wp-content/uploads/2026/02/Hero-BG-.webp") 50% 0 / cover no-repeat;
 }
 
 .hero-bg-desktop {
@@ -74,17 +83,22 @@ svg {
 }
 
 .hero-soft-overlay {
-  background: rgba(28, 28, 28, 0.1);
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255, 114, 20, 0.16), transparent 24%),
+    linear-gradient(90deg, rgba(28, 28, 28, 0.48), transparent 28%, transparent 72%, rgba(28, 28, 28, 0.5)),
+    rgba(28, 28, 28, 0.06);
 }
 
 .hero-gradient-overlay {
-  background: linear-gradient(to bottom, transparent 0%, rgba(28, 28, 28, 0.2) 50%, var(--dark) 100%);
+  background:
+    linear-gradient(to bottom, rgba(10, 12, 12, 0.04) 0%, rgba(15, 17, 17, 0.08) 30%, rgba(18, 19, 19, 0.86) 49%, var(--dark) 78%),
+    radial-gradient(ellipse at 50% 86%, rgba(15, 157, 88, 0.16), transparent 42%);
 }
 
 .hero-inner {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 280px 24px 64px;
+  padding: clamp(300px, 50svh, 390px) 18px 28px;
   position: relative;
   width: 100%;
   z-index: 1;
@@ -101,15 +115,16 @@ svg {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
   text-align: center;
   width: 100%;
 }
 
 .hero-logo {
   display: block;
+  margin-bottom: -4px;
   transition: transform 0.5s ease;
-  width: 128px;
+  width: 148px;
 }
 
 .hero-logo:hover {
@@ -126,18 +141,19 @@ svg {
 .hero-text {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   width: 100%;
 }
 
 .hero h1 {
   color: #fff;
   font-family: Lato, sans-serif;
-  font-size: 25px;
+  font-size: clamp(26px, 7.2vw, 31px);
   font-weight: 700;
   letter-spacing: 0;
-  line-height: 1.15;
+  line-height: 1.1;
   margin: 0;
+  text-wrap: balance;
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
@@ -152,12 +168,17 @@ svg {
   white-space: nowrap;
 }
 
+.mobile-title-tail {
+  margin-top: 2px;
+}
+
 .hero-description {
-  color: #e5e7eb;
-  font-size: 16px;
-  line-height: 1.7;
+  color: rgba(243, 244, 246, 0.88);
+  font-size: 15.5px;
+  line-height: 1.6;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 335px;
+  text-wrap: balance;
 }
 
 .hero-description p {
@@ -165,7 +186,7 @@ svg {
 }
 
 .hero-description p + p {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .hero-description strong {
@@ -176,7 +197,7 @@ svg {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   width: 100%;
 }
 
@@ -190,13 +211,13 @@ svg {
   cursor: pointer;
   display: inline-flex;
   font-family: "DM Sans", sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   justify-content: center;
   line-height: 1.3;
-  max-width: 340px;
+  max-width: 632px;
   overflow: hidden;
-  padding: 20px 24px;
+  padding: 18px 22px;
   position: relative;
   text-transform: uppercase;
   transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.2s ease;
@@ -283,23 +304,23 @@ svg {
 .trust-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 20px;
+  gap: 9px 18px;
   justify-content: center;
-  max-width: 340px;
-  padding-top: 4px;
+  max-width: 315px;
+  padding-top: 2px;
   width: 100%;
 }
 
 .trust-badges span {
   align-items: center;
-  color: #d1d5db;
+  color: rgba(229, 231, 235, 0.78);
   display: inline-flex;
   font-family: "DM Sans", sans-serif;
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
   gap: 6px;
-  letter-spacing: 0.04em;
-  opacity: 0.8;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
   text-transform: uppercase;
   transition: opacity 0.3s ease;
 }
@@ -310,15 +331,15 @@ svg {
 
 .trust-badges svg {
   color: var(--orange);
-  height: 16px;
-  width: 16px;
+  height: 15px;
+  width: 15px;
 }
 
 .video-section {
   background: var(--dark);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
-  padding: 64px 24px 48px;
+  padding: 32px 24px 48px;
   position: relative;
 }
 
@@ -770,6 +791,7 @@ svg {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  white-space: nowrap;
 }
 
 .case-title p {
@@ -1162,9 +1184,9 @@ svg {
   border-top: 1px solid #f3f4f6;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 26px;
   overflow: hidden;
-  padding: 40px 24px;
+  padding: 42px 24px;
   position: relative;
 }
 
@@ -1189,11 +1211,15 @@ svg {
 
 .logo-caption {
   align-items: center;
-  background: #f9fafb;
+  background: #fff;
+  border: 1px solid #edf0f3;
+  border-radius: 16px;
+  box-shadow: 0 16px 36px rgba(17, 24, 39, 0.06);
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  padding: 0 16px;
+  gap: 6px;
+  padding: 13px 22px;
   position: relative;
   z-index: 3;
 }
@@ -1201,18 +1227,21 @@ svg {
 .logo-caption span {
   color: #9ca3af;
   font-family: "DM Sans", sans-serif;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.2em;
-  margin-bottom: 6px;
+  letter-spacing: 0.18em;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .logo-caption strong {
   color: var(--text);
+  align-items: baseline;
+  display: flex;
   font-family: Lato, sans-serif;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 900;
+  gap: 6px;
   line-height: 1;
 }
 
@@ -1232,32 +1261,38 @@ svg {
 }
 
 .marquee-track {
-  animation: marquee 40s linear infinite;
+  animation: marquee 82s linear infinite;
   align-items: center;
   display: flex;
+  gap: 15px;
   width: max-content;
 }
 
-.marquee-track:hover {
-  animation-play-state: paused;
+.marquee-group {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  gap: 15px;
 }
 
-.marquee-track span {
-  color: #6b7280;
-  filter: grayscale(1);
-  font-family: Lato, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  opacity: 0.4;
-  padding: 0 24px;
-  white-space: nowrap;
-  transition: opacity 0.3s ease, color 0.3s ease, filter 0.3s ease;
+.logo-card {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #edf0f3;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(17, 24, 39, 0.04);
+  display: flex;
+  flex: 0 0 auto;
+  height: 75px;
+  justify-content: center;
+  padding: 15px 20px;
+  width: 150px;
 }
 
-.marquee-track span:hover {
-  color: #000;
-  filter: grayscale(0);
-  opacity: 1;
+.logo-card img {
+  max-height: 44px;
+  max-width: 114px;
+  object-fit: contain;
 }
 
 .footer {
@@ -1415,12 +1450,34 @@ svg {
     display: block;
   }
 
+  .desktop-title-tail {
+    display: inline;
+  }
+
+  .mobile-only,
+  .mobile-title-tail {
+    display: none;
+  }
+
+  .hero {
+    align-items: center;
+    min-height: 100vh;
+  }
+
   .hero-bg-mobile {
     display: none;
   }
 
   .hero-bg-desktop {
     display: block;
+  }
+
+  .hero-soft-overlay {
+    background: rgba(28, 28, 28, 0.1);
+  }
+
+  .hero-gradient-overlay {
+    background: linear-gradient(to bottom, transparent 0%, rgba(28, 28, 28, 0.2) 50%, var(--dark) 100%);
   }
 
   .hero-inner {
@@ -1446,6 +1503,7 @@ svg {
   }
 
   .hero-logo {
+    margin-bottom: 0;
     width: 180px;
   }
 
@@ -1460,6 +1518,7 @@ svg {
   .hero-description {
     font-size: 20px;
     margin: 0;
+    max-width: 600px;
   }
 
   .hero-actions {
@@ -1607,8 +1666,9 @@ svg {
 
   .logo-carousel {
     justify-content: center;
-    padding-bottom: 56px;
-    padding-top: 56px;
+    gap: 30px;
+    padding-bottom: 52px;
+    padding-top: 52px;
   }
 
   .logo-carousel::before,
@@ -1618,18 +1678,18 @@ svg {
 
   .logo-caption {
     align-items: center;
-    background: #f9fafb;
-    border-left: 1px solid #e5e7eb;
-    border-right: 1px solid #e5e7eb;
-    padding: 0 48px;
+    border-radius: 999px;
+    flex-direction: row;
+    gap: 12px;
+    padding: 15px 30px;
   }
 
   .logo-caption span {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .logo-caption strong {
-    font-size: 34px;
+    font-size: 31px;
   }
 
   .carousel-divider {
@@ -1637,17 +1697,24 @@ svg {
   }
 
   .marquee-window {
-    left: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
     width: 100%;
   }
 
-  .marquee-track span {
-    font-size: 18px;
-    padding-left: 32px;
-    padding-right: 32px;
+  .marquee-track,
+  .marquee-group {
+    gap: 20px;
+  }
+
+  .logo-card {
+    height: 88px;
+    padding: 18px 24px;
+    width: 180px;
+  }
+
+  .logo-card img {
+    max-height: 53px;
+    max-width: 136px;
   }
 
   .footer-grid {
@@ -1689,7 +1756,7 @@ svg {
   }
 
   .case-title h2 {
-    font-size: 44px;
+    font-size: 39px;
   }
 
   .stats strong {
@@ -1699,11 +1766,11 @@ svg {
 
 @media (max-width: 390px) {
   .hero-inner {
-    padding-top: 250px;
+    padding-top: 292px;
   }
 
   .hero h1 {
-    font-size: 23px;
+    font-size: 25px;
   }
 
   .cta-button {

@@ -1606,8 +1606,7 @@ svg {
   }
 
   .logo-carousel {
-    flex-direction: row;
-    gap: 48px;
+    justify-content: center;
     padding-bottom: 56px;
     padding-top: 56px;
   }
@@ -1618,9 +1617,11 @@ svg {
   }
 
   .logo-caption {
-    align-items: flex-start;
-    background: transparent;
-    padding: 0;
+    align-items: center;
+    background: #f9fafb;
+    border-left: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+    padding: 0 48px;
   }
 
   .logo-caption span {
@@ -1632,11 +1633,15 @@ svg {
   }
 
   .carousel-divider {
-    background: #e5e7eb;
-    display: block;
-    flex-shrink: 0;
-    height: 48px;
-    width: 1px;
+    display: none;
+  }
+
+  .marquee-window {
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
   }
 
   .marquee-track span {

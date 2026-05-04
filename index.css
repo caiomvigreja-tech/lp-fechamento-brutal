@@ -201,6 +201,42 @@ svg {
   width: 100%;
 }
 
+.offer-pricing {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.offer-old-price {
+  color: rgba(229, 231, 235, 0.72);
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.offer-new-price {
+  background: linear-gradient(135deg, #fff0d6, #ffb15c 38%, #ff7214 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: Poppins, sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.95;
+}
+
+.offer-payment-note {
+  color: rgba(243, 244, 246, 0.72);
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .cta-button {
   align-items: center;
   background: linear-gradient(90deg, var(--green), var(--green-light), var(--green));
@@ -1101,6 +1137,162 @@ svg {
   transform: translateY(-8px);
 }
 
+.offer-section {
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(255, 114, 20, 0.16), transparent 34%),
+    linear-gradient(180deg, #070808 0%, #0f1010 52%, #070808 100%);
+  overflow: hidden;
+  padding: 72px 24px 84px;
+  position: relative;
+}
+
+.offer-section-glow {
+  background: rgba(15, 157, 88, 0.16);
+  border-radius: 999px;
+  filter: blur(60px);
+  height: 220px;
+  left: 50%;
+  position: absolute;
+  top: 10%;
+  transform: translateX(-50%);
+  width: min(620px, 88vw);
+}
+
+.offer-section-wrap {
+  margin: 0 auto;
+  max-width: 920px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.offer-section-eyebrow {
+  color: var(--orange-light);
+  display: inline-block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.offer-section h2 {
+  color: #fff;
+  font-family: Lato, sans-serif;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.offer-section h2 span {
+  color: var(--orange);
+  display: inline;
+}
+
+.offer-section-copy {
+  color: rgba(229, 231, 235, 0.82);
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 18px auto 0;
+  max-width: 700px;
+}
+
+.offer-section-copy strong {
+  color: var(--orange);
+}
+
+.offer-product-showcase {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 34px auto 0;
+  max-width: 920px;
+  overflow: visible;
+  position: relative;
+}
+
+.offer-section .offer-pricing {
+  margin-top: 18px;
+}
+
+.offer-product-showcase img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.offer-benefits {
+  align-items: center;
+  color: rgba(229, 231, 235, 0.76);
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  gap: 14px 20px;
+  justify-content: center;
+  letter-spacing: 0.14em;
+  margin: 28px auto 0;
+  text-transform: uppercase;
+}
+
+.offer-benefits span {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  position: relative;
+}
+
+.offer-benefits span + span::before {
+  background: rgba(229, 231, 235, 0.28);
+  content: "";
+  height: 22px;
+  left: -10px;
+  position: absolute;
+  width: 1px;
+}
+
+.offer-benefits svg {
+  color: var(--orange);
+  height: 18px;
+  stroke-width: 2.1;
+  width: 18px;
+}
+
+.offer-cta {
+  margin-top: 24px;
+  width: min(100%, 620px);
+}
+
+.offer-payment-safe {
+  color: rgba(229, 231, 235, 0.66);
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-top: 28px;
+  text-transform: uppercase;
+}
+
+.offer-payment-safe > span {
+  align-items: center;
+  display: inline-flex;
+  gap: 18px;
+}
+
+.offer-payment-safe > span::before,
+.offer-payment-safe > span::after {
+  background: rgba(229, 231, 235, 0.34);
+  content: "";
+  height: 1px;
+  width: 56px;
+}
+
 .audience-icon {
   align-items: center;
   background: rgba(255, 114, 20, 0.05);
@@ -1525,6 +1717,14 @@ svg {
     align-items: flex-start;
   }
 
+  .offer-old-price {
+    font-size: 22px;
+  }
+
+  .offer-new-price {
+    font-size: 48px;
+  }
+
   .cta-button {
     font-size: 20px;
     max-width: none;
@@ -1563,6 +1763,31 @@ svg {
   .video-heading h2 {
     font-size: 32px;
     line-height: 1.3;
+  }
+
+  .offer-section {
+    padding: 96px 24px 108px;
+  }
+
+  .offer-section h2 {
+    font-size: 48px;
+  }
+
+  .offer-benefits {
+    gap: 18px 28px;
+  }
+
+  .offer-new-price {
+    font-size: 62px;
+  }
+
+  .offer-payment-note {
+    font-size: 13px;
+  }
+
+  .offer-cta {
+    padding-left: 56px;
+    padding-right: 56px;
   }
 
   .video-heading span + span {
